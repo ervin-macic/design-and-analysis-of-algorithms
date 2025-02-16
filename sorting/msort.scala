@@ -51,7 +51,6 @@ object msort{
     def main(args: Array[String]): Unit = {
         var arr = Array[Int](1,3,5,2,7,8,3,4)
         msort(arr, 0, 8)
-        println("ANS: "+ans)
         for(x <- arr) {
             println(x)
         }
