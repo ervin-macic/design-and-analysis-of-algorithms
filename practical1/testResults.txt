@@ -1,0 +1,124 @@
+Tests:
+tr01[~/Downloads/DAA_practical1]$ time scala Brack -NumberRec testcase.txt
+Bracketing values for ABBA
+A can be achieved in 2 ways
+B can be achieved in 1 way
+C can be achieved in 2 ways
+
+real    0m0.488s
+user    0m0.796s
+sys     0m0.096s
+
+tr01[~/Downloads/DAA_practical1]$ time scala Brack -PossibleRec testcase.txt
+Bracketing values for ABBA
+A is Possible
+B is Possible
+C is Possible
+
+real    0m0.483s
+user    0m0.737s
+sys     0m0.081s
+
+tr01[~/Downloads/DAA_practical1]$ time scala Brack -Tabulate testcase.txt
+Bracketing values for ABBA
+A can be achieved 2 ways
+For example:(A((BB)A))
+B can be achieved 1 way
+For example:(A(B(BA)))
+C can be achieved 2 ways
+For example:((A(BB))A)
+
+real    0m0.517s
+user    0m0.789s
+sys     0m0.094s
+
+NOW USING largetestcase.txt containing ABBABBAABA
+
+tr01[~/Downloads/DAA_practical1]$ time scala Brack -PossibleRec largetestcase.txt
+Bracketing values for ABBABBAABA
+A is Possible
+B is Possible
+C is Possible
+
+real    0m0.515s
+user    0m0.720s
+sys     0m0.092s
+
+tr01[~/Downloads/DAA_practical1]$ time scala Brack -NumberRec largetestcase.txt
+Bracketing values for ABBABBAABA
+A can be achieved in 1906 ways
+B can be achieved in 1197 ways
+C can be achieved in 1759 ways
+
+real    0m1.650s
+user    0m2.618s
+sys     0m0.140s
+
+tr01[~/Downloads/DAA_practical1]$ time scala Brack -Tabulate largetestcase.txt
+Bracketing values for ABBABBAABA
+A can be achieved 1906 ways
+For example:(A(B(B((AB)(B((A(AB))A))))))
+B can be achieved 1197 ways
+For example:(A(B(B(A(B(B((A(AB))A)))))))
+C can be achieved 1759 ways
+For example:((AB)(B((AB)(B((A(AB))A)))))
+
+real    0m0.539s
+user    0m0.748s
+sys     0m0.096s
+
+NOW VERY LARGE TESTCASE:
+
+tr01[~/Downloads/DAA_practical1]$ time scala Brack -Tabulate verylargetestcase.txt
+Bracketing values for CABACABCCABBACBACBCACABACBCAB
+B can be achieved 827015960 ways
+For example:((CA)(B((A(CA))(B(C((CA)(B(B(A(C(B(A(C(B(C(A(C(A(B(A(C(B((CA)B)))))))))))))))))))))))
+C can be achieved 1791911145 ways
+For example:(C(A(B((A(CA))(B(C((CA)(B(B(A(C(B(A(C(B(C(A(C(A(B(A(C(B((CA)B))))))))))))))))))))))))
+
+real    0m0.610s
+user    0m0.869s
+sys     0m0.102s
+
+tr01[~/Downloads/DAA_practical1]$ time scala Brack -Tabulate verylargetestcase.txt (30)
+Bracketing values for ACCCBABCCABAABACCCBBAACABCCAB
+A can be achieved 585552557 ways
+For example:(A(C((C((CB)A))(B(C((CA)(B((AA)(B(((A(C(CC)))B)(B((AA)(C(A((B(C(CA)))B)))))))))))))))
+B can be achieved 297880832 ways
+For example:(A(C(C(C(B((AB)(C(C(A(B(A((AB)(A(C((C(C(B(BA))))(A(C(A(B(C((CA)B)))))))))))))))))))))
+C can be achieved 1716604203 ways
+For example:(((A(C(CC)))B)(A(B(C(C(A(B(A((AB)(A(C((C(C(B(BA))))(A(C(A(B(C((CA)B))))))))))))))))))
+
+real    0m0.599s
+user    0m0.908s
+sys     0m0.092s
+
+tr01[~/Downloads/DAA_practical1]$ time scala Brack -Tabulate testcase100.txt
+Bracketing values for BBAABACABBBAABAACABABBCBAABBCBCBBACCABAAACBBBCBACCAABBCCACAACAABCCABBAAABABBCABBCACCAACBBBCCCBAACAAB
+B can be achieved 2068833434 ways
+For example:(B(B(A(A(B(A(C(A(B(B(B((AA)(B((AA)(C(A(B(A(B(B(C(B(A(A(B(B(C(B((C(B(BA)))(C(C(A(B(A((AA)(C(B(B(B(C(B(A(C(C(A((AB)(B(C((CA)(C(A((A(CA))(A(B(C(C(A(B(B((AA)(A(B(A(B(B(C(A(B(B(C(A(C((CA)(A(C(B(B(B((C(C((CB)A)))(A(C(A(AB)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+C can be achieved 740086290 ways
+For example:(B(B((AA)(B((A(CA))(B(B(B((AA)(B((AA)(C(A(B(A(B(B(C(B(A(A(B(B(C(B((C(B(BA)))(C(C(A(B(A((AA)(C(B(B(B(C(B(A(C(C(A((AB)(B(C((CA)(C(A((A(CA))(A(B(C(C(A(B(B((AA)(A(B(A(B(B(C(A(B(B(C(A(C((CA)(A(C(B(B(B((C(C((CB)A)))(A(C(A(AB))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+real    0m1.003s
+user    0m1.514s
+sys     0m0.130s
+
+tr01[~/Downloads/DAA_practical1]$ time scala Brack -Tabulate testcase1000.txt
+Bracketing values for AABBCABCBACCCCCAABCACAACBACBCBCACCACCCACCAAACBBBABABCBBBABCBABACCACACCACABBBBCACBACCACACAAABCBCACBCCACCBBCBACCBBBAABBCBBCBBACBABABCABAACACCBBCABCCBCACCAABBCABBABABCBCBCCAAAABACBCABCBACABBABCAABAABCCCCCBCBBBCBCBCCCBAABACBCBABBBABBBABBACAACABBBCABBCAACCCBCCCAABCCAACCCACACBCBAACCAAABCACABCCBBCCACCCABBBCBABACCACACCCBBCCBACBCCCCABBAAAABCCBCBCCCCBBBCBACBABCCACAACBCACCCCBBACACBABBBACBBBCCCCAABBAAABACCBBBAABACBBBBABCAAAACBBACBABBCACBCACACBABCCCCACACBBCACBBBCCBABABCBBCCBCCABCCBCACCAACBBBABBBBCCABCAAABCCBCCCABABACCCAABBACCCBACBACCAACCAACABBBBBABCBCBBAACBACBCBAABABCCBBACBACAABBBBBBAAABCAABABBABCBBACBCCBABBCBBCAACBCCCBCBCBCBABBAAAABBBBACCCCAAAAABBBCAABABABACABCACACCCABAAACACAAACACABBCACCACBAACBBCBACCCABACBCCBBACBBCABAAAAAABABBABBBABBCBACBACCCABBABCCCACBBCACBBCBBABBCBCACBBBCBBCCCBBBAAABCAAAAACACACCBBCABCBBCABABCACBACBAAAABACBCCAAACCBBBABAACCABAACACACACCBCCAAABBABCCACBCCCCABBBBBACBBCBABACAAAABBBAABCAAABBCCCAABBACCBCCCBBCCABCBBCACCACBCCBCBCACCABCABCACBABACBCBABBCBCCAABCCBBABABABBACBCABABCAABCBCABCAAC
+A can be achieved 1648866916 ways
+For example:(A((AB)(B(C(A(B(C(B(A(C(C(C(C(C(A((AB)(C(A(C(A(A(C(B(A(C(B(C(B((CA)(C(C(A(C((C(CA))(C(C(A((AA)(C(B(B(B((AB)(A(B(C(B(B(B((AB)(C(B((AB)(A(C((CA)(C(A(C((CA)(C(A(B(B(B(B(C(A(C(B((A(C(CA)))(C(A(C(A(A((AB)(C(B(C(A(C(B(C((CA)(C(C(B(B(C(B(((A(CC))B)(B(B(A((AB)(B(C(B(B((C(B(BA)))(C(B((AB)(A(B(C(A(B(A((A(CA))(C(C(B(B(C(A(B(C(C(B(C(A(C(C(A((AB)(B(C(A(B(B(A(B(A(B(C(B(C(B((C(CA))(A((AA)(B(((AC)B)(C(A(B(C(B((A(CA))(B(B(A(B(C(A((AB)(A((AB)(C(C(C(C(C(B(C(B(B(B((C(BC))(B(C((C((CB)A))(A(B(A(C(B(((CB)A)(B(B(B((AB)(B(B(A(B(B((A(CA))(A(C(A(B(B(B(C(A(B(B(C(A(((A(C(CC)))B)(C(C(C(A((AB)(C(C(A((A(C(C(CA))))(C(A(C(B(((CB)A)(A(C((CA)(A((AB)(C(A(C(A(B(C((C((BB)C))(C(A(C((C(CA))(B(B(B(C(B(A(B((A(C(CA)))(C(A(C((C(C((BB)C)))(C(B(((AC)B)(C(C(C(C(A(B(B((AA)(A((AB)(C(C(B(C(B((C(C(C(C(B(B(BC)))))))(B(((AC)B)(A(B(C(C(A(C(A(A(C(B((CA)(C(C(C(C(B(B(A(C(A(C(B((AB)(B(B(A(C(B(B(B((C(C(C(CA))))(A(B(B((AA)(A(B(A(C((C(B((BB)A)))(A(B(A(C(B(B(B(B(A(B(C(A(A((AA)(C(B(B(A(C(B(A(B(B(C(A(C(B((CA)(C(A(C(B(A(B(C((C(C(CA)))(C(A(C(B(B((CA)(C(B(B(B(C(((CB)A)(B((AB)(C(B(B(C(C(B(C((CA)(B(C((C(BC))(A(C((CA)(A(C(B(B(B(A(B(B(B(B(C(C(A(B(C(A((AA)(B(C((C(BC))(C(C(A(B(A(B(A(C((C(CA))(A(B(B(((A(C(CC)))B)(A(C(B(A(C(C(A((A(C(CA)))(A(C(A(B(B(B(B(B((AB)(C(B(C(B(B(A(A(C(B(A(C(B(C(B(A(A(B(A(B(C(C(B(B(A(C(B(A(C(A((AB)(B(B(B(B(B((AA)(A(B(C(A((AB)(A(B(B((AB)(C(B(B(A(C(B((C((CB)A))(B(B(C(B(B(C(A(((AC)B)(C(C(C(B(C(B((C(BC))(B((AB)(B((AA)(A((AB)(B(B(B((A(C(C(C(CA)))))(A((AA)(A(B(B(B(C(A((AB)(A(B(A(B(A(C(A(B(C(A(C(A(C((C(CA))(B((AA)(A(C(A(C(A((AA)(C(A(C(A(B(B(C(A(C((CA)(C(B((AA)(C(B(B(C(B((A(C(C(CA))))(B(((AC)B)(C(C(B(B(A(C(B(B((CA)(B((AA)(A((AA)(A(B(A(B(B((AB)(B(B(A(B(B(C(B(A(C(B((A(C(C(CA))))(B(B(A(B(C(C(C(A(C(B(B((CA)(C(B(B(C(B(B(A(B(B(C(B((CA)(C(B(B(B(C(B(B((C(C(C(B((BB)A)))))(A((AB)(C(A((AA)(A((A(CA))(C(A(C((C((BB)C))(A(B(C(B(B(C(A(B(A(B(C(A(C(B(A(C(B((AA)(A((AB)(A(C(B((C(CA))(A(((A(CC))B)(B(B(A(B(A((A(C(CA)))(B((AA)(C(A(C(A(C(A(C((C(BC))(C(A((AA)(B(B(A(B(C(C(A(C(B((C(C(C(CA))))(B(B(B(B(B(((AC)B)(B(C(B(A(B((A(CA))(A((AA)(B(B(B((AA)(B(C(A(A((AB)(B(C((C(CA))(A(B(B(((A(CC))B)(C(C(C(B(B(C(C(A(B(C(B(B(C(A(C((CA)(C(B(C((C(BC))(B(C(A(C(C(A(B(C(A(B(C(A(C(B(A(B(((AC)B)(C(B((AB)(B(C(B((C(CA))(A(B(C(C(B(B(A(B(A(B(A(B(B(((AC)B)(C(A(B(A(B(C(A((AB)(C(B(C(A(B(C(A(AC)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+C can be achieved 2132871659 ways
+For example:((AA)(B(B(C(A(B(C(B((A(C(C(C(C(CA))))))(A(B(C(A(C(A(A(C(B(A(C(B(C(B((CA)(C(C(A(C((C(CA))(C(C(A((AA)(C(B(B(B((AB)(A(B(C(B(B(B((AB)(C(B((AB)(A(C((CA)(C(A(C((CA)(C(A(B(B(B(B(C(A(C(B((A(C(CA)))(C(A(C(A(A((AB)(C(B(C(A(C(B(C((CA)(C(C(B(B(C(B(((A(CC))B)(B(B(A((AB)(B(C(B(B((C(B(BA)))(C(B((AB)(A(B(C(A(B(A((A(CA))(C(C(B(B(C(A(B(C(C(B(C(A(C(C(A((AB)(B(C(A(B(B(A(B(A(B(C(B(C(B((C(CA))(A((AA)(B(((AC)B)(C(A(B(C(B((A(CA))(B(B(A(B(C(A((AB)(A((AB)(C(C(C(C(C(B(C(B(B(B((C(BC))(B(C((C((CB)A))(A(B(A(C(B(((CB)A)(B(B(B((AB)(B(B(A(B(B((A(CA))(A(C(A(B(B(B(C(A(B(B(C(A(((A(C(CC)))B)(C(C(C(A((AB)(C(C(A((A(C(C(CA))))(C(A(C(B(((CB)A)(A(C((CA)(A((AB)(C(A(C(A(B(C((C((BB)C))(C(A(C((C(CA))(B(B(B(C(B(A(B((A(C(CA)))(C(A(C((C(C((BB)C)))(C(B(((AC)B)(C(C(C(C(A(B(B((AA)(A((AB)(C(C(B(C(B((C(C(C(C(B(B(BC)))))))(B(((AC)B)(A(B(C(C(A(C(A(A(C(B((CA)(C(C(C(C(B(B(A(C(A(C(B((AB)(B(B(A(C(B(B(B((C(C(C(CA))))(A(B(B((AA)(A(B(A(C((C(B((BB)A)))(A(B(A(C(B(B(B(B(A(B(C(A(A((AA)(C(B(B(A(C(B(A(B(B(C(A(C(B((CA)(C(A(C(B(A(B(C((C(C(CA)))(C(A(C(B(B((CA)(C(B(B(B(C(((CB)A)(B((AB)(C(B(B(C(C(B(C((CA)(B(C((C(BC))(A(C((CA)(A(C(B(B(B(A(B(B(B(B(C(C(A(B(C(A((AA)(B(C((C(BC))(C(C(A(B(A(B(A(C((C(CA))(A(B(B(((A(C(CC)))B)(A(C(B(A(C(C(A((A(C(CA)))(A(C(A(B(B(B(B(B((AB)(C(B(C(B(B(A(A(C(B(A(C(B(C(B(A(A(B(A(B(C(C(B(B(A(C(B(A(C(A((AB)(B(B(B(B(B((AA)(A(B(C(A((AB)(A(B(B((AB)(C(B(B(A(C(B((C((CB)A))(B(B(C(B(B(C(A(((AC)B)(C(C(C(B(C(B((C(BC))(B((AB)(B((AA)(A((AB)(B(B(B((A(C(C(C(CA)))))(A((AA)(A(B(B(B(C(A((AB)(A(B(A(B(A(C(A(B(C(A(C(A(C((C(CA))(B((AA)(A(C(A(C(A((AA)(C(A(C(A(B(B(C(A(C((CA)(C(B((AA)(C(B(B(C(B((A(C(C(CA))))(B(((AC)B)(C(C(B(B(A(C(B(B((CA)(B((AA)(A((AA)(A(B(A(B(B((AB)(B(B(A(B(B(C(B(A(C(B((A(C(C(CA))))(B(B(A(B(C(C(C(A(C(B(B((CA)(C(B(B(C(B(B(A(B(B(C(B((CA)(C(B(B(B(C(B(B((C(C(C(B((BB)A)))))(A((AB)(C(A((AA)(A((A(CA))(C(A(C((C((BB)C))(A(B(C(B(B(C(A(B(A(B(C(A(C(B(A(C(B((AA)(A((AB)(A(C(B((C(CA))(A(((A(CC))B)(B(B(A(B(A((A(C(CA)))(B((AA)(C(A(C(A(C(A(C((C(BC))(C(A((AA)(B(B(A(B(C(C(A(C(B((C(C(C(CA))))(B(B(B(B(B(((AC)B)(B(C(B(A(B((A(CA))(A((AA)(B(B(B((AA)(B(C(A(A((AB)(B(C((C(CA))(A(B(B(((A(CC))B)(C(C(C(B(B(C(C(A(B(C(B(B(C(A(C((CA)(C(B(C((C(BC))(B(C(A(C(C(A(B(C(A(B(C(A(C(B(A(B(((AC)B)(C(B((AB)(B(C(B((C(CA))(A(B(C(C(B(B(A(B(A(B(A(B(B(((AC)B)(C(A(B(A(B(C(A((AB)(C(B(C(A(B(C(A(AC))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+real    1m4.740s
+user    1m4.166s
+sys     0m0.433s
+
+Attempt at 10k
+tr01[~/Downloads/DAA_practical1]$ time scala Brack -Tabulate testcase10000.txt
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+        at java.base/java.lang.reflect.Array.newArray(Native Method)
+        at java.base/java.lang.reflect.Array.newInstance(Array.java:78)
+        at scala.reflect.ClassTag$GenericClassTag.newArray(ClassTag.scala:149)
+        at scala.Array$.ofDim(Array.scala:326)
