@@ -201,7 +201,7 @@ object Brack{
 			println("Word Too Long! Change MAXWORD")
 			sys.exit();
 		} else {
-		for (i <- 0 until len){
+			for (i <- 0 until len){
 				plainInt(i) = LetterToInt(plain(i))
 			}
 		}
