@@ -38,9 +38,9 @@ object Brack{
 	//Checks whether w(i,j) can be bracketed to z
 	def PossibleRec(w: Array[Int], i: Int, j: Int, z:Int): Boolean = {
 		if(j == i+1) return w(i) == z
-		// at least three letters in string here
 		for(k <- 1 until (j-i)) {
 			for(p <- 0 until 3) {
+			// possible optimisation: declare variables for PossibleRec(w, i, i+k, 0), PossibleRec(w, i, i+k, 1), PossibleRec(w, i, i+k, 2), PossibleRec(w, i+k, j, 2), PossibleRec(w, i+k, j, 0) then T(n) <= sum (3T(i)+2T(n-i)) instead of T(n) <= 
 				if(PossibleRec(w, i, i+k, combinationsFor(z)(p)._1) && PossibleRec(w, i+k, j, combinationsFor(z)(p)._2))
 					return true
 			}
